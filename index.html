@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLIIT Band | Official</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#000;
+    color:#fff;
+}
+
+/* HEADER */
+header{
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid gold;
+    background:#000;
+    position:fixed;
+    width:100%;
+    z-index:1000;
+}
+
+header h1{
+    color:gold;
+}
+
+nav a{
+    color:#FFD700;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:white;
+}
+
+/* HERO WITH SLIDESHOW BACKGROUND */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero h2{
+    font-size:60px;
+    color:gold;
+    z-index:2;
+}
+
+.hero p{
+    color:#ddd;
+    margin-top:15px;
+    font-size:18px;
+    z-index:2;
+}
+
+/* SLIDES */
+.slide-bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
+}
+
+.active{
+    opacity:0.5;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+    padding:80px 20px;
+    background:#111;
+    border-top:2px solid gold;
+}
+
+.contact h2{
+    color:gold;
+    margin-bottom:30px;
+}
+
+.contact a{
+    display:inline-block;
+    margin:10px;
+    padding:12px 28px;
+    border:2px solid gold;
+    border-radius:30px;
+    color:gold;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.contact a:hover{
+    background:gold;
+    color:black;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    color:#aaa;
+}
+
+@media(max-width:768px){
+    .hero h2{
+        font-size:35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SLIIT Band</h1>
+    <nav>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <!-- Background Slides -->
+    <div class="slide-bg active" style="background-image:url('img/WhatsApp\ Image\ 2026-02-17\ at\ 11.58.49\ \(1\).jpeg');"></div>
+    <div class="slide-bg" style="background-image:url('img/WhatsApp\ Image\ 2026-02-17\ at\ 11.58.49\ \(3\).jpeg');"></div>
+    <div class="slide-bg" style="background-image:url('img/WhatsApp\ Image\ 2026-02-17\ at\ 11.58.49\ \(6\).jpeg');"></div>
+    <div class="slide-bg" style="background-image:url('img/WhatsApp\ Image\ 2026-02-17\ at\ 11.58.50.jpeg');"></div>
+    <div class="slide-bg" style="background-image:url('img/WhatsApp\ Image\ 2026-02-17\ at\ 11.58.50\ \(1\).jpeg');"></div>
+
+    <div>
+        <h2>Feel The Rhythm</h2>
+        <p>Official Band of SLIIT | Live Music • Events • Performances</p>
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+    <h2>Connect With SLIIT Band</h2>
+
+    <a href="https://www.facebook.com/share/1B2zXp2vcx/?mibextid=wwXIfr" target="_blank">Facebook</a>
+
+    <a href="https://www.instagram.com/sliitband" target="_blank">Instagram</a>
+
+    <a href="https://www.tiktok.com/@sliit.band" target="_blank">TikTok</a>
+
+    <a href="https://www.youtube.com/channel/UCWh5Lw5m3IynorpJt3A0Wag" target="_blank">YouTube</a>
+
+    <a href="mailto:sliitbandofficial@gmail.com">Email Us</a>
+</section>
+
+<footer>
+    © 2026 SLIIT Band | All Rights Reserved
+</footer>
+
+<script>
+let slides = document.querySelectorAll('.slide-bg');
+let current = 0;
+
+function changeSlide(){
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+}
+
+setInterval(changeSlide, 3000);
+</script>
+
+</body>
+</html>
